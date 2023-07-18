@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="content">
+    <div class="action-row">
+      <div class="action-left">
+        <div class="valor-total">
+          <h2><strong>Valor total:</strong></h2>
+        </div>
+      </div>
+      <div class="action-right">
+        <div class="search-filter">
+          <mat-form-field class="search-field" appearance="fill">
+            <mat-label>Filtro</mat-label>
+            <input matInput placeholder="Marca, modelo, ano" />
+          </mat-form-field>
+        </div>
+        <div class="btn-new">
+          <button mat-mini-fab color="jaune" [routerLink]="'/handle-vehicle'">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="marca">
+          <th mat-header-cell *matHeaderCellDef>Marca</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.marca }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="modelo">
+          <th mat-header-cell *matHeaderCellDef>Modelo</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.modelo }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="cor">
+          <th mat-header-cell *matHeaderCellDef>Cor</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.cor }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="ano">
+          <th mat-header-cell *matHeaderCellDef>Ano</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.ano }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataUltimaCompra">
+          <th mat-header-cell *matHeaderCellDef>Data Última Compra</th>
+          <td mat-cell *matCellDef="let vehicle">
+            {{ vehicle.dataUltimaCompra }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+          <th mat-header-cell *matHeaderCellDef>Valor</th>
+          <td mat-cell *matCellDef="let vehicle">{{ vehicle.valor }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="btns">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let vehicle"></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+</div>

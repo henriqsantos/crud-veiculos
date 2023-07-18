@@ -1,0 +1,43 @@
+.container {
+  background: #212120;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 24px 24px 24px;
+}
+
+.action-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  .action-left {
+    color: whitesmoke;
+  }
+
+  .action-right {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 12px;
+  }
+}
+
+.mat-jaune {
+  background-color: #ffbb0b !important;
+  color: #212120 !important;
+}
+
+.mat-mdc-table,
+.mat-mdc-header-cell {
+  color: #ffbb0b !important;
+  background-color: #212120 !important;
+}
