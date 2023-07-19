@@ -1,20 +1,30 @@
 <div class="container">
   <div class="content">
     <div class="form-case">
-      <form class="form">
+      <form class="form" [formGroup]="formGroup">
         <mat-form-field>
           <mat-label>Marca</mat-label>
-          <input matInput placeholder="Marca" required />
+          <input
+            matInput
+            placeholder="Marca"
+            required
+            formControlName="marca"
+          />
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Modelo</mat-label>
-          <input matInput placeholder="Modelo" required />
+          <input
+            matInput
+            placeholder="Modelo"
+            required
+            formControlName="modelo"
+          />
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Cor</mat-label>
-          <input matInput placeholder="Cor" required />
+          <input matInput placeholder="Cor" required formControlName="cor" />
         </mat-form-field>
 
         <mat-form-field>
@@ -26,19 +36,49 @@
             min="1950"
             max="2025"
             required
+            formControlName="ano"
           />
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Data Última Compra</mat-label>
-          <input matInput placeholder="Data Última Compra" required />
+          <input
+            matInput
+            formControlName="dataUltimaCompra"
+            [matDatepicker]="picker"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>Valor</mat-label>
-          <input matInput placeholder="Valor" required />
+          <input
+            matInput
+            placeholder="Valor"
+            required
+            formControlName="valor"
+            type="number"
+          />
         </mat-form-field>
       </form>
+      <div class="handle-btns">
+        <button
+          mat-raised-button
+          color="jaune"
+          (click)="save()"
+          [disabled]="formGroup.invalid"
+        >
+          {{ formGroup.get("id")?.value ? "Atualizar" : "Salvar" }}
+        </button>
+        <button mat-raised-button color="jaune-inv" routerLink="/list-vehicle">
+          Cancelar
+        </button>
+      </div>
     </div>
   </div>
 </div>

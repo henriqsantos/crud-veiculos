@@ -22,3 +22,20 @@
   gap: 8px;
   padding: 16px;
 }
+
+.handle-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 24px 0px 24px;
+  gap: 8px;
+}
+
+.mat-jaune {
+  background-color: #ffbb0b !important;
+  color: #212120 !important;
+}
+.mat-jaune-inv {
+  background-color: #2d2d2c !important;
+  color: #ffbb0b !important;
+}
